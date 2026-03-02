@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <title>OS³ × B&O Design System</title>
+    <script type="module" crossorigin src="/os3grid/assets/index-B9AU5dcr.js"></script>
+    <link rel="stylesheet" crossorigin href="/os3grid/assets/index--zxDRpyF.css">
+    <style>
+      :root {
+        --shield-green: #66ff66;
+        --shield-bg: #0a0c10;
+        --shield-panel: #22324a;
+        --shield-text: #e6e6e6;
+      }
+
+      html,
+      body,
+      #root {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 12% 10%, rgba(102, 255, 102, 0.08), transparent 42%),
+          radial-gradient(circle at 88% 82%, rgba(34, 50, 74, 0.46), transparent 46%),
+          var(--shield-bg);
+      }
+
+      #root {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: clamp(12px, 2vw, 24px);
+      }
+
+      @media (min-width: 1200px) {
+        #root > *:first-child {
+          transform: scale(1.16);
+          transform-origin: top center;
+        }
+      }
+
+      .text-\[7px\],
+      .text-\[8px\],
+      .text-\[9px\],
+      .text-\[10px\],
+      .text-\[11px\],
+      .text-\[12px\],
+      .text-xs {
+        font-size: clamp(0.88rem, 0.95vw, 1rem) !important;
+        line-height: 1.45 !important;
+      }
+
+      [class*='text-[7px]'],
+      [class*='text-[8px]'],
+      [class*='text-[9px]'],
+      [class*='text-[10px]'],
+      [class*='text-[11px]'],
+      [class*='text-[12px]'],
+      [class*='text-xs'] {
+        font-size: clamp(0.9rem, 1.02vw, 1.06rem) !important;
+        line-height: 1.5 !important;
+      }
+
+      [class*='tracking-'] {
+        letter-spacing: 0.17em !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      .tracking-tighter,
+      .tracking-widest {
+        letter-spacing: 0.08em;
+      }
+
+      button,
+      [role='button'] {
+        border: 1px solid rgba(102, 255, 102, 0.4);
+        border-radius: 14px;
+        background: linear-gradient(160deg, rgba(34, 50, 74, 0.9), rgba(10, 12, 16, 0.94));
+        color: var(--shield-text);
+        min-height: 44px;
+        padding: 0.55rem 1rem;
+        box-shadow:
+          0 8px 18px rgba(0, 0, 0, 0.35),
+          inset 0 0 0 1px rgba(230, 230, 230, 0.05);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      button:hover,
+      [role='button']:hover {
+        border-color: rgba(102, 255, 102, 0.7);
+        box-shadow:
+          0 14px 28px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(102, 255, 102, 0.22);
+        transform: translateY(-1px);
+      }
+
+      button:active,
+      [role='button']:active {
+        transform: translateY(0);
+      }
+
+      input,
+      select,
+      textarea {
+        border: 1px solid rgba(230, 230, 230, 0.16);
+        border-radius: 12px;
+        background: rgba(18, 18, 18, 0.6);
+        color: var(--shield-text);
+        min-height: 42px;
+        padding: 0.52rem 0.75rem;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus,
+      button:focus-visible,
+      [role='button']:focus-visible {
+        outline: none;
+        border-color: rgba(102, 255, 102, 0.84);
+        box-shadow: 0 0 0 2px rgba(102, 255, 102, 0.24);
+      }
+
+      input[type='range'] {
+        appearance: none;
+        height: 8px;
+        border-radius: 999px;
+        background: linear-gradient(to right, rgba(102, 255, 102, 0.8), rgba(102, 255, 102, 0.25));
+        border: none;
+        padding: 0;
+        min-height: 8px;
+      }
+
+      input[type='range']::-webkit-slider-thumb {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--shield-green);
+        box-shadow: 0 0 10px rgba(102, 255, 102, 0.8);
+        cursor: pointer;
+      }
+
+      input[type='checkbox'] {
+        appearance: none;
+        width: 46px;
+        height: 26px;
+        border-radius: 999px;
+        border: 1px solid rgba(230, 230, 230, 0.25);
+        background: linear-gradient(180deg, rgba(12, 16, 23, 0.95), rgba(22, 30, 42, 0.95));
+        position: relative;
+        transition: border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      input[type='checkbox']::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #b8c3d3;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.45);
+        transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      input[type='checkbox']:checked {
+        border-color: rgba(102, 255, 102, 0.7);
+        box-shadow: inset 0 0 14px rgba(102, 255, 102, 0.2);
+      }
+
+      input[type='checkbox']:checked::after {
+        transform: translateX(20px);
+        background: var(--shield-green);
+        box-shadow: 0 0 9px rgba(102, 255, 102, 0.8);
+      }
+
+      .border-white\/10,
+      .border-white\/5 {
+        border-color: rgba(230, 230, 230, 0.2) !important;
+      }
+
+      .bg-\[\#22324A\],
+      .bg-os3-panel {
+        background-image: linear-gradient(150deg, rgba(34, 50, 74, 0.96), rgba(17, 25, 37, 0.92));
+      }
+
+      #shield-info-trigger {
+        position: fixed;
+        z-index: 10001;
+        left: max(22px, calc(50% - 400px));
+        top: max(18px, calc(50% - 118px));
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border: 1px solid rgba(230, 230, 230, 0.18);
+        background: linear-gradient(160deg, rgba(34, 50, 74, 0.92), rgba(10, 12, 16, 0.94));
+        color: #e6e6e6;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font: 700 1rem/1 Inter, sans-serif;
+        letter-spacing: 0.02em;
+        box-shadow:
+          0 10px 20px rgba(0, 0, 0, 0.4),
+          inset 0 0 0 1px rgba(230, 230, 230, 0.06);
+      }
+
+      #shield-info-trigger:hover {
+        border-color: rgba(102, 255, 102, 0.58);
+        color: #66ff66;
+        box-shadow:
+          0 14px 24px rgba(0, 0, 0, 0.45),
+          0 0 0 1px rgba(102, 255, 102, 0.2);
+      }
+
+      #shield-info-trigger::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        width: 3px;
+        height: 20px;
+        border-radius: 2px;
+        background: rgba(102, 255, 102, 0.88);
+        box-shadow: 0 0 8px rgba(102, 255, 102, 0.55);
+      }
+
+      @media (max-width: 920px) {
+        #shield-info-trigger {
+          left: 14px;
+          top: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-os3-bg">
+    <div id="unlock-video-overlay" style="position:fixed;inset:0;z-index:9999;background:#000;opacity:0;pointer-events:none;transition:opacity 250ms ease;display:none;">
+      <video
+        id="unlock-video"
+        preload="auto"
+        muted
+        playsinline
+        style="width:100%;height:100%;object-fit:cover;"
+      >
+        <source src="/media/hero/os3-hero-motion-v1.mp4" type="video/mp4" />
+        <source src="/media/hero/os3-hero-motion-v1.webm" type="video/webm" />
+      </video>
+    </div>
+    <button id="shield-info-trigger" type="button" aria-label="Open ShieldAi information">i</button>
+    <div id="aes-info-modal" aria-hidden="true" style="position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;padding:24px;">
+      <div role="dialog" aria-modal="true" aria-labelledby="aes-info-title" style="width:min(860px,94vw);max-height:80vh;overflow:auto;border:1px solid rgba(102,255,102,.45);border-radius:16px;background:linear-gradient(160deg,rgba(34,50,74,.96),rgba(10,12,16,.98));box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 22px rgba(102,255,102,.16);padding:22px 22px 18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;">
+          <h2 id="aes-info-title" style="margin:0;color:#66ff66;font:700 1.12rem/1.2 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;">AES-256 Security Layer</h2>
+          <button id="aes-info-close" type="button" style="min-height:36px;padding:.35rem .7rem;border-radius:10px;border:1px solid rgba(230,230,230,.2);background:rgba(0,0,0,.32);color:#e6e6e6;">Close</button>
+        </div>
+        <p style="margin:0;color:#e6e6e6;font:400 1rem/1.72 Inter,sans-serif;letter-spacing:.01em;">
+          AES-256 encryption is the security backbone behind ShieldAi’s data protection layer. It is a symmetric-key encryption standard that uses a 256-bit key to mathematically transform data into unreadable ciphertext, protecting information in transit and at rest. With 2²⁵⁶ possible key combinations, brute-force attacks are computationally impractical with current technology, which is why AES-256 is trusted by military, governments, financial institutions, and defence environments worldwide. Within ShieldAi, AES-256 ensures that sensitive business communications, credentials, client data, and remote support sessions remain confidential, tamper-resistant, and aligned with modern enterprise security expectations.
+        </p>
+      </div>
+    </div>
+    <div id="shield-info-modal" aria-hidden="true" style="position:fixed;inset:0;z-index:10002;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:24px;">
+      <div role="dialog" aria-modal="true" aria-labelledby="shield-info-title" style="width:min(920px,95vw);max-height:82vh;overflow:auto;border:1px solid rgba(102,255,102,.45);border-radius:16px;background:linear-gradient(160deg,rgba(34,50,74,.96),rgba(10,12,16,.98));box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 22px rgba(102,255,102,.16);padding:22px 22px 18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;">
+          <h2 id="shield-info-title" style="margin:0;color:#66ff66;font:700 1.12rem/1.2 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;">ShieldAi Protection Layer</h2>
+          <button id="shield-info-close" type="button" style="min-height:36px;padding:.35rem .7rem;border-radius:10px;border:1px solid rgba(230,230,230,.2);background:rgba(0,0,0,.32);color:#e6e6e6;">Close</button>
+        </div>
+        <p style="margin:0;color:#e6e6e6;font:400 1rem/1.72 Inter,sans-serif;letter-spacing:.01em;">
+          ShieldAi is the SME digital protection layer inside JB³Ai, built to defend identity, cash flow, and decision integrity without disrupting daily operations. It operates quietly across email, browsing, and business accounts, detecting fraud signals and impersonation risks before damage occurs. The Private Secure Tunnel, powered by an adaptive Smart VPN+, activates automatically during sensitive actions such as banking, administrative access, or client data handling, remaining app-aware rather than permanently on. All protected traffic is encrypted using AES-256, the industry-standard symmetric encryption trusted by governments and financial institutions for high-security environments. Beyond network protection, the AI Risk Firewall continuously learns behavioural patterns across logins, devices, payment requests, and invoice changes, flagging anomalies that fall outside normal business rhythm. ShieldAi also includes inbound trust scanning for suspicious emails and documents, domain and identity monitoring, and intelligent alerting that explains risk in plain business language. It protects without noise, supports without friction, and strengthens operational resilience where it matters most.
+        </p>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script>
+      (function () {
+        const root = document.getElementById('root');
+        const overlay = document.getElementById('unlock-video-overlay');
+        const video = document.getElementById('unlock-video');
+
+        if (!root || !overlay || !video) return;
+
+        let sawSecureGate = false;
+        let played = false;
+
+        const playIntro = async () => {
+          if (played) return;
+          played = true;
+
+          overlay.style.display = 'block';
+          requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+          });
+
+          try {
+            video.currentTime = 0;
+            await video.play();
+          } catch (_) {
+            setTimeout(() => {
+              overlay.style.opacity = '0';
+              setTimeout(() => {
+                overlay.style.display = 'none';
+              }, 260);
+            }, 1200);
+          }
+        };
+
+        video.addEventListener('ended', () => {
+          overlay.style.opacity = '0';
+          setTimeout(() => {
+            overlay.style.display = 'none';
+          }, 260);
+        });
+
+        const checkUnlock = () => {
+          const text = root.textContent || '';
+          if (text.includes('SECURE_ACCESS_GATE')) {
+            sawSecureGate = true;
+            return;
+          }
+          if (sawSecureGate && !text.includes('SECURE_ACCESS_GATE')) {
+            observer.disconnect();
+            playIntro();
+          }
+        };
+
+        const observer = new MutationObserver(checkUnlock);
+        observer.observe(root, { childList: true, subtree: true, characterData: true });
+        checkUnlock();
+      })();
+
+      (function () {
+        const root = document.getElementById('root');
+        const modal = document.getElementById('aes-info-modal');
+        const closeBtn = document.getElementById('aes-info-close');
+
+        if (!root || !modal || !closeBtn) return;
+
+        const isAesTrigger = (node) => {
+          if (!node || !(node instanceof HTMLElement)) return false;
+          const candidate = node.closest('button, [role="button"], [tabindex], div, span');
+          if (!candidate) return false;
+          const text = (candidate.textContent || '').replace(/\s+/g, ' ').trim().toUpperCase();
+          return /\bAE?S\s*-?\s*256\b/.test(text);
+        };
+
+        const openModal = () => {
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeModal = () => {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        };
+
+        root.addEventListener('click', (event) => {
+          if (isAesTrigger(event.target)) {
+            openModal();
+          }
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+            closeModal();
+          }
+        });
+      })();
+
+      (function () {
+        const trigger = document.getElementById('shield-info-trigger');
+        const modal = document.getElementById('shield-info-modal');
+        const closeBtn = document.getElementById('shield-info-close');
+
+        if (!trigger || !modal || !closeBtn) return;
+
+        const openModal = () => {
+          modal.style.display = 'flex';
+          modal.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeModal = () => {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        };
+
+        trigger.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+            closeModal();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
